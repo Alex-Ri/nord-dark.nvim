@@ -4,6 +4,22 @@
 -- NOTE: All hex codes must be uppercase (for testing)
 ---@class BasePalette
 local palette = {
+    custom = {
+        gray = {
+            dark = '#1B1B1B',
+            base = '#222222',
+            soft = '#2b2b2b',
+            light = '#777777',
+        },
+
+        frost = '#88C0D0',
+        blue = '#5E81AC',
+        white = '#FFFFFF',
+
+        yellow = '#EBCB8B',
+
+        border = '#777777',
+    },
 
     none = 'NONE',
 
