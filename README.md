@@ -1,8 +1,9 @@
-# 🌒 Nordic
+# 🌒 Nord Dark
 
 [![Tests](https://github.com/AlexvZyl/nordic.nvim/workflows/Tests/badge.svg)](https://github.com/AlexvZyl/nordic.nvim/actions?workflow=Tests)
 
-A Neovim colorscheme based on [Nord](https://www.nordtheme.com/), but Aurora > Frost. The idea behind this colorscheme is to use Nord, but add some darker colors and use Aurora more prominently than Nord themes usually do. This ends up creating a colorscheme that is soft on the eyes.
+A Neovim colorscheme based on VS Code Theme [Nord Native](https://github.com/divanvisagie/nord-native) and [Nordic](https://github.com/AlexvZyl/nordic.nvim).
+The Arctic Ice Studio Nord theme with the blueish tint removed to match the dark mode background colours of the native os.
 
 If there is anything that does not seem right, even if it is a very small highlight, please let me know with an issue or PR!
 
@@ -24,18 +25,18 @@ For the list of colors/palette, see [this file](https://github.com/AlexvZyl/nord
 With [packer.nvim](https://github.com/wbthomason/packer.nvim):
 
 ```lua
-use 'AlexvZyl/nordic.nvim'
+use 'Alex-Ri/nord-dark.nvim'
 ```
 
 With [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 {
-    'AlexvZyl/nordic.nvim',
+    'Alex-Ri/nord-dark.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-        require('nordic').load()
+        require('nord-dark').load()
     end
 }
 ```
@@ -43,7 +44,7 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
 With [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```vim
-Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
+Plug 'Alex-Ri/nord-dark.nvim', { 'branch': 'main' }
 ```
 
 # 🚀 Usage
@@ -51,15 +52,15 @@ Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Using vim:
 
 ```vim
-colorscheme nordic
+colorscheme nord-dark
 ```
 
 Using lua:
 
 ```lua
-vim.cmd.colorscheme('nordic')
+vim.cmd.colorscheme('nord-dark')
 -- or
-require('nordic').load()
+require('nord-dark').load()
 ```
 
 Using with lualine:
@@ -67,7 +68,7 @@ Using with lualine:
 ```lua
 require('lualine').setup({
     options = {
-        theme = 'nordic'
+        theme = 'nord-dark'
     }
 })
 ```
@@ -75,17 +76,18 @@ require('lualine').setup({
 If you want to use the color palette somewhere else, you can access it with:
 
 ```lua
-local palette = require('nordic.colors')
+local palette = require('nord-dark.colors')
 ```
+
 > [!WARNING]
-> Please make sure that `require('nordic.colors')` is called *after* setup, otherwise the colors might be wrong for your config.
+> Please make sure that `require('nord-dark.colors')` is called _after_ setup, otherwise the colors might be wrong for your config.
 
 # ⚙️ Configuration
 
-Nordic will use the default values, unless `setup` is called. Below is the default configuration.
+Nord Dark will use the default values, unless `setup` is called. Below is the default configuration.
 
 ```lua
-require('nordic').setup({
+require('nord-dark').setup({
     -- This callback can be used to override the colors used in the base palette.
     on_palette = function(palette) end,
     -- This callback can be used to override the colors used in the extended palette.
@@ -146,8 +148,9 @@ require('nordic').setup({
 &nbsp;
 
 An example of overriding colors in the base palette:
+
 ```lua
-require('nordic').setup({
+require('nord-dark').setup({
     on_palette = function(palette)
         palette.black0 = "#BF616A"
         palette.green.base = palette.cyan.base
@@ -157,16 +160,16 @@ require('nordic').setup({
 
 </details>
 
-
 <details>
     <summary><b><code>after_palette</code></b></summary>
 &nbsp;
 
 An example of setting the visual selection color (for more values see [this file](https://github.com/AlexvZyl/nordic.nvim/blob/main/lua/nordic/colors/init.lua)):
+
 ```lua
-require('nordic').setup({
+require('nord-dark').setup({
     after_palette = function(palette)
-        local U = require("nordic.utils")
+        local U = require("nord-dark.utils")
         palette.bg_visual = U.blend(palette.orange.base, palette.bg, 0.15)
     end,
 })
@@ -174,14 +177,14 @@ require('nordic').setup({
 
 </details>
 
-
 <details>
     <summary><b><code>on_highlight</code></b></summary>
 &nbsp;
 
 An example of overriding the `TelescopePromptTitle` colors:
+
 ```lua
-require('nordic').setup({
+require('nord-dark').setup({
     on_highlight = function(highlights, palette)
         highlights.TelescopePromptTitle = {
             fg = palette.red.bright,
@@ -196,8 +199,9 @@ require('nordic').setup({
 ```
 
 And an example of disabling all italics:
+
 ```lua
-require('nordic').setup({
+require('nord-dark').setup({
     on_highlight = function(highlights, _palette)
         for _, highlight in pairs(highlights) do
             highlight.italic = false
@@ -207,7 +211,6 @@ require('nordic').setup({
 ```
 
 </details>
-
 
 # 🗒️ Supported Plugins and Platforms
 
