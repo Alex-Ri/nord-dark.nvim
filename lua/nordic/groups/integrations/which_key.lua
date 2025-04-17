@@ -5,11 +5,11 @@ function M.get()
 
     local G = {}
 
-    G.WhichKey = { fg = C.yellow.base }
+    G.WhichKey = { fg = C.custom.frost }
     G.WhichKeyFloat = { bg = C.bg_float }
-    G.WhichKeyDesc = { fg = C.white0 }
-    G.WhichKeyGroup = { fg = C.orange.bright, bold = true }
-    G.WhichKeyBorder = { fg = C.black0, bg = C.bg_float }
+    G.WhichKeyDesc = { fg = C.custom.white }
+    G.WhichKeyGroup = { fg = C.custom.blue, bold = true }
+    G.WhichKeyBorder = { fg = C.custom.border, bg = C.bg_float }
     -- TODO: Unsure.
     G.WhichKeySeperator = {}
     G.WhichKeyValue = {}

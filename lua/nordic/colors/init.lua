@@ -29,36 +29,35 @@ function C.build_palette()
     -- Some of the format is from @folke/tokyonight.nvim.
 
     -- Backgrounds
-    C.bg = (options.transparent.bg and C.none) or ((options.swap_backgrounds and C.black1) or C.gray0)
-    C.bg_dark = (options.transparent.bg and C.none) or C.black0
-    C.bg_sidebar = (options.transparent.bg and C.none) or C.bg
-    C.bg_statusline = C.black0
-    C.bg_fold = C.gray2
+    C.bg = (options.transparent.bg and C.none)
+        or ((options.swap_backgrounds and C.custom.gray.dark) or C.custom.gray.dark)
+    C.bg_dark = (options.transparent.bg and C.none) or C.custom.gray.dark
+    C.bg_sidebar = (options.transparent.bg and C.none) or C.custom.gray.base
+    C.bg_statusline = C.custom.gray.base
+    C.bg_fold = C.custom.gray.base
 
     -- Cursorline Background
-    if options.cursorline.theme == 'light' then
-        options.cursorline.bg = C.gray2
-    else
-        options.cursorline.bg = C.black0
-    end
+    options.cursorline.bg = C.custom.gray.soft
 
     C.bg_visual = (options.transparent.bg and options.cursorline.bg)
         or U.blend(options.cursorline.bg, C.bg, options.cursorline.blend)
 
     -- Borders
-    C.border_fg = (options.bright_border and C.white0) or C.black0
+    C.border_fg = (options.bright_border and C.white0) or C.custom.gray.light
     C.border_bg = (options.transparent.bg and C.none) or C.bg
 
     -- Foregrounds
-    C.fg = C.white0
+    C.fg = C.custom.white
     C.fg_bright = C.white1
     C.fg_dark = C.white0
-    C.fg_sidebar = C.gray2
+    C.fg_sidebar = C.custom.gray.base
     C.fg_fold = C.fg
     C.fg_selected = C.fg_bright
 
     -- Floating windows
-    C.bg_float = (options.transparent.float and C.none) or ((options.swap_backgrounds and C.gray0) or C.black1)
+    C.bg_float = C.custom.gray.base
+    -- (options.transparent.float and C.none)
+    --       or ((options.swap_backgrounds and C.custom.gray.base) or C.black1)
     C.fg_float = C.fg
     C.bg_float_border = C.bg_float
     C.fg_float_border = C.border_fg
@@ -94,7 +93,7 @@ function C.build_palette()
     C.info = C.blue2
 
     -- Misc
-    C.comment = C.gray4
+    C.comment = C.custom.gray.light
 
     -- Modify the palette after generating colors.
     options.after_palette(C)

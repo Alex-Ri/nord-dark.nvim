@@ -14,7 +14,7 @@ function M.get_groups()
 
     -- SYNTAX
 
-    G.Constant = { fg = C.magenta.bright } -- (preferred) any constant
+    G.Constant = { fg = C.custom.blue } -- (preferred) any constant
     G.Number = { link = 'Constant' } --   a number constant: 234  0xff
     G.Boolean = { link = 'Number' } --  a boolean constant: TRUE  false
     G.Float = { link = 'Number' } --    a floating point constant: 2.3e10
@@ -23,29 +23,29 @@ function M.get_groups()
     G.Character = { fg = C.green.base } --  a character constant: 'c', '\n'
     G.Variable = { fg = C.fg }
     G.Namespace = { fg = C.yellow.dim }
-    G.Field = { fg = C.cyan.base }
+    G.Field = { fg = C.fg }
     G.Title = { fg = C.yellow.base }
-    G.Builtin = { fg = C.blue0 }
+    G.Builtin = { fg = C.custom.blue }
     G.Identifier = { fg = C.fg } -- (preferred) any variable name
-    G.Function = { fg = C.blue2 } -- function name (also: methods for classes)
-    G.Keyword = { fg = C.orange.base, bold = O.bold_keywords } --  any other keyword
+    G.Function = { fg = C.custom.frost } -- function name (also: methods for classes)
+    G.Keyword = { fg = C.custom.blue, bold = O.bold_keywords } --  any other keyword
     G.Statement = { link = 'Keyword' } -- (preferred) any statement
     G.Conditional = { link = 'Keyword' } --  if, then, else, endif, switch, etc.
     G.Repeat = { link = 'Keyword' } --   for, do, while, etc.
     G.Label = { link = 'Keyword' } --    case, default, etc.
     G.Operator = { fg = C.fg } -- "sizeof", "+", "*", etc.
-    G.Macro = { fg = C.red.base } -- same as Define
+    G.Macro = { fg = C.custom.blue } -- same as Define
     G.Exception = { link = 'Macro' } --  try, catch, throw
     G.PreProc = { link = 'Macro' } -- (preferred) generic preprocessor
     G.Include = { link = 'Macro' } --  preprocessor #include
     G.Define = { link = 'Macro' } --   preprocessor #define
     G.PreCondit = { link = 'Macro' } --  preprocessor #if, #else, #endif, etc.
-    G.Comment = { fg = C.gray4, italic = O.italic_comments }
-    G.Type = { fg = C.yellow.base } -- (preferred) int, long, char, etc.
+    G.Comment = { fg = C.custom.gray.light }
+    G.Type = { fg = C.custom.frost } -- (preferred) int, long, char, etc.
     G.StorageClass = { link = 'Keyword' } -- static, register, volatile, etc.
     G.Structure = { link = 'Type' } --  struct, union, enum, etc.
     G.Typedef = { link = 'Type' } --  A typedef
-    G.Special = { fg = C.blue1 } -- (preferred) any special symbol
+    G.Special = { fg = C.custom.blue } -- (preferred) any special symbol
     -- SpecialChar   = { } --  special character in a constant
     -- Tag           = { } --    you can use CTRL-] on this
     G.Delimiter = { italic = true, fg = C.gray5 } --  character that needs attention
@@ -147,10 +147,10 @@ function M.get_groups()
     G.lCursor = { fg = C.black0 } -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     G.CursorIM = { fg = C.black0 } -- like Cursor, but used when in IME mode |CursorIM|
     G.CursorColumn = { bg = C.bg_visual, bold = O.cursorline.bold } -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    G.CursorLine = { bg = C.bg_visual, bold = O.cursorline.bold } -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    G.CursorLineNr = { fg = C.gray5, bold = O.cursorline.bold_number } -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    G.CursorLine = { bg = C.bg_visual, bold = O.cursorline.bold, fg = C.custom.gray.l } -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    G.CursorLineNr = { fg = C.custom.frost, bold = O.cursorline.bold_number } -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     G.CursorLineSign = {}
-    G.Directory = { fg = C.blue1 } -- directory names (and other special names in listings)
+    G.Directory = { fg = C.custom.white } -- directory names (and other special names in listings)
     G.EndOfBuffer = { fg = C.fg_sidebar } -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor  = { } -- cursor in a focused terminal
     -- TermCursorNC= { } -- cursor in an unfocused terminal
@@ -162,7 +162,7 @@ function M.get_groups()
     G.SignColumn = { bg = C.bg_sidebar, fg = C.fg_sidebar } -- column where |signs| are displayed
     G.SignColumnSB = { bg = C.bg_sidebar, fg = C.fg_sidebar } -- column where |signs| are displayed
     G.Substitute = { bg = C.red.base, fg = C.bg_dark } -- |:substitute| replacement text highlighting
-    G.LineNr = { fg = C.fg_sidebar } -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    G.LineNr = { fg = C.custom.gray.light } -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     G.MatchParen = { underline = true, bold = true, sp = C.white1 } -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     G.ModeMsg = { fg = C.fg, bold = true } -- 'showmode' message (e.g., "-- INSERT -- ")
     G.MsgArea = { fg = C.fg } -- Area for messages and cmdline

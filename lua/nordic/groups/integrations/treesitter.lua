@@ -18,21 +18,21 @@ function M.get()
     G['@comment.hint'] = { fg = C.hint }
     G['@comment.info'] = { fg = C.info }
     G['@comment.warning'] = { fg = C.warning }
-    G['@comment.todo'] = { fg = C.todo }
+    -- G['@comment.todo'] = { fg = C.todo }
     G['@operator'] = { link = 'Operator' } -- For any operator: `+`, but also `->` and `*` in C.
     --- Punctuation
     G['@punctuation.delimiter'] = { link = 'Delimiter' } -- For delimiters ie: `.`
-    G['@punctuation.bracket'] = { link = '@operator' } -- For brackets and parens.
+    G['@punctuation.bracket'] = { fg = C.custom.yellow } -- For brackets and parens.
     G['@punctuation.special'] = { link = 'Macro' } -- For special punctuation that does not fall in the categories before.
     G['@punctuation.special.markdown'] = { fg = C.orange.base, bold = true }
     --- Literals
     G['@string'] = { link = 'String' }
     G['@string.documentation'] = { link = 'String' }
-    G['@string.escape'] = { fg = C.magenta.bright } -- For escape characters within a string.
-    G['@string.regex'] = { fg = C.magenta.bright } -- For regexes.
+    G['@string.escape'] = { fg = C.custom.yellow } -- For escape characters within a string.
+    G['@string.regex'] = { fg = C.custom.blue } -- For regexes.
     --- Functions
     G['@constructor'] = { link = 'Function' } -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    G['@parameter'] = { fg = C.fg, italic = true } -- For parameters of a function.
+    G['@parameter'] = { fg = C.custom.frost } -- For parameters of a function.
     G['@parameter.builtin'] = { link = 'Builtin' } -- For builtin parameters of a function, e.g. "..." or Smali's pG[1-99]
     --- Keywords
     G['@keyword'] = { link = 'Keyword' } -- For keywords that don't fall in previous categories.
@@ -107,9 +107,9 @@ function M.get()
     G['@markup.strikethrough'] = { strikethrough = true }
     G['@markup.underline'] = { underline = true }
     -- TSX
-    G['@tag.tsx'] = { fg = C.blue1 }
-    G['@constructor.tsx'] = { fg = C.blue1 }
-    G['@tag.delimiter.tsx'] = { fg = C.blue1 }
+    G['@tag.tsx'] = { fg = C.custom.blue }
+    G['@constructor.tsx'] = { fg = C.custom.blue }
+    G['@tag.delimiter.tsx'] = { fg = C.custom.blue }
     --- LSP semantic token highlights for typescriptreact
     G['@lsp.type.interface.typescriptreact'] = { link = 'Type' }
     --LSP Semantic Token Groups
@@ -152,10 +152,10 @@ function M.get()
     G['@diff.delta'] = { link = 'DiffChange' }
     G['@character'] = { link = 'Character' }
     G['@character.special'] = { link = 'SpecialChar' }
-    G['@string.special'] = { fg = C.yellow.base } -- For escape characters within a string.
-    G['@tag'] = { fg = C.blue1 } -- Tags like html tag names.
-    G['@tag.delimiter'] = { fg = C.fg } -- Tag delimiter like `<` `>` `/`
-    G['@tag.attribute'] = { fg = C.yellow.base } -- Tag attribute like `id` `class`
+    G['@string.special'] = { fg = C.custom.yellow } -- For escape characters within a string.
+    G['@tag'] = { fg = C.custom.blue } -- Tags like html tag names.
+    G['@tag.delimiter'] = { fg = C.custom.blue } -- Tag delimiter like `<` `>` `/`
+    G['@tag.attribute'] = { fg = C.custom.frost } -- Tag attribute like `id` `class`
     G['@constant'] = { link = 'Constant' }
     G['@number'] = { link = 'Constant' }
     G['@float'] = { link = 'Constant' }
@@ -187,6 +187,9 @@ function M.get()
     G['@storageclass'] = { link = 'Keyword' }
     G['@none'] = { link = 'None' }
 
+    -- Vue
+    G['@tag.vue'] = { fg = C.custom.blue }
+    G['@punctuation.special.vue'] = { fg = C.custom.yellow }
     return G
 end
 
