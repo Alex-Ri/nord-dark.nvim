@@ -223,11 +223,5 @@ I do not personally use all of the platforms and plugins in the list, so if some
 - [folke/tokyonight](https://github.com/folke/tokyonight.nvim) served as an excellent example and template to create a Neovim theme.
 - [Dotfiles](https://github.com/AlexvZyl/.dotfiles) used in the screenshots.
 - [Aonodensetsu/prev_gen](https://github.com/Aonodensetsu/prev_gen) was used to create the palette preview.
-
-</br>
-
-<p align="center">
-    <a href="https://github.com/AlexvZyl/nordic.nvim/graphs/contributors">
-        <img src="https://contrib.rocks/image?repo=AlexvZyl/nordic.nvim" />
-    </a>
-</p>
+- [Nord Native](https://github.com/divanvisagie/nord-native)
+- [Nordic](https://github.com/AlexvZyl/nordic.nvim)
